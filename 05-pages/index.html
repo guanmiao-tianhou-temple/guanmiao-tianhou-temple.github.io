@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="關廟天后宮官網，認識本宮、參拜服務、祈福點燈、建廟護持與聯絡資訊。">
+  <title>關廟天后宮｜一份虔誠，一生守護</title>
+  <link rel="stylesheet" href="/assets/temple-content.css">
+  <link rel="stylesheet" href="/assets/temple-navigation.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">跳至主要內容</a>
+  <header class="site-header home-header">
+    <div class="nav">
+      <a class="brand" href="/">關廟天后宮<small>GUANMIAO TIANHOU TEMPLE</small></a>
+      <nav id="functions" aria-label="主選單">
+        <a href="/about/">認識本宮</a>
+        <a href="/origin/">建廟緣起</a>
+        <a href="/deities/">眾神介紹</a>
+        <a href="/services/">參拜資訊與流程</a>
+        <a href="/lights/">祈福點燈</a>
+
+        <a href="/music/">宮廟歌曲</a>
+        <a href="/support/">建廟護持</a>
+        <a href="/products/">文創商品</a>
+        <a href="/articles/">文章報導</a>
+        <a href="/contact/">交通與聯絡</a>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+    <section class="hero"><div><div class="eyebrow">天三聖母・慈悲護佑</div><h1>一份虔誠，<br>一生守護。</h1><p>帶著心願而來，帶著安心回家。<br>在關廟天后宮，讓信仰成為生活裡溫柔而堅定的力量。</p><a class="button" href="/services/">了解問事與收驚 ↗</a><a class="button outline" href="/about/">走進天后宮</a></div><div class="art"><div class="ring"></div><div class="ring two"></div><div class="seal">天三聖母</div><svg viewBox="0 0 500 120" fill="none" aria-hidden="true"><path d="M-50 50 Q50 -10 150 50 T350 50 T550 50 M-50 70 Q50 10 150 70 T350 70 T550 70 M-50 90 Q50 30 150 90 T350 90 T550 90" stroke="#b38a4b" stroke-width="1"/></svg></div></section>
+    <div class="strip"><div><strong>每週五 18:30</strong> 公事服務</div><div>問事每次 5 名・收驚不限名額</div></div>
+    <div class="home-overview">
+      <section aria-labelledby="home-news-title">
+        <div class="home-section-heading">
+          <h2 id="home-news-title">文章報導</h2>
+          <a href="/articles/">查看全部文章 <span aria-hidden="true">→</span></a>
+        </div>
+        <ul class="home-text-list"><li><a href="/articles/7a96df81-235a-4ca5-84b6-aa397b753f0f/"><span>三媽與小女孩的故事</span><time datetime="2026-11-15T15:25:38.407Z">2026年11月15日</time></a></li></ul>
+      </section>
+      <section aria-labelledby="home-services-title">
+        <div class="home-section-heading">
+          <h2 id="home-services-title">常用服務</h2>
+        </div>
+        <ul class="home-text-list">
+          <li><a href="/services/">參拜資訊與流程 <span aria-hidden="true">→</span></a></li>
+          <li><a href="/lights/">祈福點燈 <span aria-hidden="true">→</span></a></li>
+
+          <li><a href="/contact/">交通與聯絡 <span aria-hidden="true">→</span></a></li>
+        </ul>
+      </section>
+    </div>
+  </main>
+  <footer>關廟天后宮｜天三聖母<br>一份虔誠，一生守護。</footer>
+  <script>
+    // Keep links shared before the site moved to individual pages.
+    const oldAnchors = Object.freeze({
+      about: "/about/", origin: "/origin/", deities: "/deities/", services: "/services/",
+      lights: "/lights/", music: "/music/", visit: "/services/#visit", support: "/support/", contact: "/contact/",
+      "temple-story": "/origin/#temple-story", "dongyue-story": "/origin/#dongyue-story"
+    });
+    const hash = location.hash.slice(1);
+    if (Object.hasOwn(oldAnchors, hash)) location.replace(oldAnchors[hash]);
+  </script>
+</body>
+</html>
