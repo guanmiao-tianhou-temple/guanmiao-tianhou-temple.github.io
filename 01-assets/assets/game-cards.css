@@ -1,0 +1,85 @@
+.deity-cards, .lamp-cards {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+.deity-cards { margin: 0; padding: 0; list-style: none; }
+.deity-card, .lamp-card {
+  min-width: 0;
+  overflow: hidden;
+  background: #fffaf1;
+  border: 1px solid #dfbd87;
+  border-radius: 12px;
+}
+.deity-card img,
+.deity-result-photo {
+  display: block;
+  height: auto;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  object-position: center 35%;
+  background: #f1e4d4;
+}
+.deity-card img { width: 100%; }
+.deity-card-caption {
+  display: grid;
+  gap: 2px;
+  padding: 10px 12px;
+  line-height: 1.5;
+}
+.deity-card-caption strong { color: #8f2435; }
+.deity-card-caption small { color: #6c5148; }
+.deity-gallery { margin-top: 24px; }
+.deity-result-photo {
+  width: min(100%, 240px);
+  margin: 14px auto;
+  border-radius: 12px;
+  border: 1px solid #d6ac74;
+}
+.game-nav a { color: #762d34; text-underline-offset: .22em; }
+.lamp-gallery { margin-top: 20px; }
+.lamp-cards { margin-block: 12px 22px; }
+.lamp-art {
+  margin: 0;
+  padding: 9px 9px 5px;
+  background: #f1e5d5;
+  text-align: center;
+}
+.lamp-art img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 4;
+  object-fit: contain;
+  background: #f1e5d5;
+}
+.lamp-art a { display: block; }
+.lamp-art figcaption { margin: 3px 0; color: #614c38; font-size: .8rem; }
+.lamp-placard {
+  display: grid;
+  min-height: 145px;
+  padding: 18px;
+  place-content: center;
+  color: #fff7e7;
+  text-align: center;
+  outline: 1px solid #ffda9eba;
+  outline-offset: -8px;
+  background: radial-gradient(ellipse at 48% 28%, #9e4b36, #652b2c 78%);
+}
+.lamp-placard.study { background: radial-gradient(ellipse at 48% 28%, #5f7557, #394735 78%); }
+.lamp-placard.bright { background: radial-gradient(ellipse at 48% 28%, #946335, #65402c 78%); }
+.lamp-placard strong { font: 600 clamp(1.25rem, 4vw, 2rem)/1.4 "Noto Serif TC", "Songti TC", serif; }
+.lamp-card-detail { padding: 12px 14px; }
+.lamp-card-detail h3 { margin: 0 0 4px; font: 650 1.05rem/1.4 system-ui,sans-serif; }
+.lamp-card-detail p { margin-block: 0 5px; }
+.lamp-card-price { color: #812d2b; font-weight: 700; }
+@media (min-width: 800px) {
+  .lamp-cards { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+@media (max-width: 380px) {
+  .deity-card-caption { padding: 8px; }
+  .lamp-card-detail { padding: 9px; }
+}
+@media print {
+  .game-nav, .deity-gallery { display: none; }
+}
