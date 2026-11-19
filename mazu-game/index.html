@@ -1,7 +1,40 @@
-<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#9e2f37"><title>媽祖知我心｜關廟天后宮</title><style>:root{font-family:system-ui,'Noto Sans TC',sans-serif;color:#512d2d}*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at top,#ffe5a6,#f7c9aa 48%,#f5e7d9);min-height:100vh}.wrap{max-width:540px;margin:auto;padding:22px 16px 50px}.head{text-align:center;color:#8f2435}.eyebrow{letter-spacing:.2em;font-weight:700}h1{font-size:clamp(32px,9vw,48px);margin:8px 0}h2{font-size:23px;margin:12px 0}p{line-height:1.85}.panel{background:#fffaf2;border:2px solid #dfae67;border-radius:24px;box-shadow:0 12px 35px #863f3524;padding:23px;margin-top:18px}.intro{font-size:17px;text-align:center}.button,.option{font:inherit;cursor:pointer;border:0;width:100%;border-radius:14px;padding:16px;margin-top:11px;text-align:left;background:#fff1da;color:#603637;font-weight:650}.option:hover,.option:focus{outline:2px solid #bd733f;background:#ffe0af}.button{background:#a62f43;color:white;text-align:center}.secondary{background:#f1e3d4;color:#703f41}.progress{height:9px;background:#f1dfce;border-radius:30px;overflow:hidden;margin:18px 0}.bar{height:100%;background:#c9903c;transition:width .2s}.muted{color:#806b64;font-size:14px}.card{background:linear-gradient(145deg,#fff9e8,#ffe1a8);border:3px double #bd8240;border-radius:20px;padding:22px;text-align:center}.deity{font-size:29px;color:#962d40;font-weight:800}.tag{font-weight:700;color:#a55e2f}.section{text-align:left;margin-top:20px}.hidden{display:none}.note{font-size:12px;color:#766761;margin-top:18px;line-height:1.6}.symbol{font-size:40px}.footer{text-align:center;font-size:13px;margin-top:24px;color:#755d58}@media print{body{background:white}.no-print{display:none!important}.wrap{max-width:650px}.panel{box-shadow:none}}</style><link rel="stylesheet" href="/assets/game-cards.css"></head><body><nav class="game-nav" aria-label="官網導覽" style="padding:12px;display:flex;gap:16px;justify-content:center"><a href="/services/">← 返回參拜流程</a><a href="/">返回首頁</a></nav><main class="wrap"><header class="head"><div class="eyebrow">關廟天后宮</div><h1>媽祖知我心</h1><div>五題尋守護・聽見自己的心</div></header><section class="panel" id="intro"><div class="intro"><div class="symbol">🏮</div><h2>此刻，你最需要哪一份守護？</h2><p>用約一分鐘，透過五道生活情境題，整理現在的心情與困擾，認識與你需求相應的媽祖。</p><button class="button" onclick="start()">開始探索我的心境</button><p class="muted">不需登入・不收集答案・沒有標準答案</p></div><section class="deity-gallery" aria-labelledby="deity-gallery-title">
+<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#9e2f37"><title>媽祖知我心｜關廟天后宮</title><style>:root{font-family:system-ui,'Noto Sans TC',sans-serif;color:#512d2d}*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at top,#ffe5a6,#f7c9aa 48%,#f5e7d9);min-height:100vh}.wrap{max-width:540px;margin:auto;padding:22px 16px 50px}.head{text-align:center;color:#8f2435}.eyebrow{letter-spacing:.2em;font-weight:700}h1{font-size:clamp(32px,9vw,48px);margin:8px 0}h2{font-size:23px;margin:12px 0}p{line-height:1.85}.panel{background:#fffaf2;border:2px solid #dfae67;border-radius:24px;box-shadow:0 12px 35px #863f3524;padding:23px;margin-top:18px}.intro{font-size:17px;text-align:center}.button,.option{font:inherit;cursor:pointer;border:0;width:100%;border-radius:14px;padding:16px;margin-top:11px;text-align:left;background:#fff1da;color:#603637;font-weight:650}.option:hover,.option:focus{outline:2px solid #bd733f;background:#ffe0af}.button{background:#a62f43;color:white;text-align:center}.secondary{background:#f1e3d4;color:#703f41}.progress{height:9px;background:#f1dfce;border-radius:30px;overflow:hidden;margin:18px 0}.bar{height:100%;background:#c9903c;transition:width .2s}.muted{color:#806b64;font-size:14px}.card{background:linear-gradient(145deg,#fff9e8,#ffe1a8);border:3px double #bd8240;border-radius:20px;padding:22px;text-align:center}.deity{font-size:29px;color:#962d40;font-weight:800}.tag{font-weight:700;color:#a55e2f}.section{text-align:left;margin-top:20px}.hidden{display:none}.note{font-size:12px;color:#766761;margin-top:18px;line-height:1.6}.symbol{font-size:40px}.footer{text-align:center;font-size:13px;margin-top:24px;color:#755d58}@media print{body{background:white}.no-print{display:none!important}.wrap{max-width:650px}.panel{box-shadow:none}}</style><link rel="stylesheet" href="/assets/game-cards.css"><style>
+.result-card-dialog {
+  width: min(94vw, 620px);
+  max-height: 92dvh;
+  overflow: auto;
+  padding: 20px;
+  border: 2px solid #bd8240;
+  border-radius: 20px;
+  color: #512d2d;
+  background: #fffaf2;
+}
+.result-card-dialog::backdrop { background: #291316b3; }
+.result-card-dialog img { display: block; width: 100%; height: auto; }
+.result-card-dialog a.button { display: block; text-decoration: none; }
+.result-card-dialog [hidden] { display: none !important; }
+#save-card:disabled { opacity: .7; cursor: wait; }
+@media print {
+  @page { size: A4; margin: 8mm; }
+  body:has(.result-card-dialog[open]) > :not(.result-card-dialog) { display: none !important; }
+  .result-card-dialog[open] {
+    position: static !important;
+    display: block !important;
+    width: 100%; max-width: none; height: auto; max-height: none;
+    margin: 0; padding: 0; border: 0; overflow: visible;
+  }
+  .result-card-dialog::backdrop { display: none; }
+  .result-card-dialog .card-preview-controls { display: none !important; }
+  .result-card-dialog img {
+    width: auto; max-width: 100%; height: auto; max-height: 278mm;
+    margin: 0 auto; object-fit: contain; break-inside: avoid;
+  }
+}
+
+</style></head><body><nav class="game-nav" aria-label="官網導覽" style="padding:12px;display:flex;gap:16px;justify-content:center"><a href="/services/">← 返回參拜流程</a><a href="/">返回首頁</a></nav><main class="wrap"><header class="head"><div class="eyebrow">關廟天后宮</div><h1>媽祖知我心</h1><div>五題尋守護・聽見自己的心</div></header><section class="panel" id="intro"><div class="intro"><div class="symbol">🏮</div><h2>此刻，你最需要哪一份守護？</h2><p>用約一分鐘，透過五道生活情境題，整理現在的心情與困擾，認識與你需求相應的媽祖。</p><button class="button" onclick="start()">開始探索我的心境</button><p class="muted">不需登入・不收集答案・沒有標準答案</p></div><section class="deity-gallery" aria-labelledby="deity-gallery-title">
   <h2 id="deity-gallery-title">八尊媽祖守護圖卡</h2>
   <ul id="deity-cards" class="deity-cards"></ul>
-</section></section><section class="panel hidden" id="quiz"><div id="count" class="muted"></div><div class="progress"><div class="bar" id="bar"></div></div><h2 id="question"></h2><div id="options"></div><button class="button secondary" onclick="back()">返回上一題</button></section><section class="panel hidden" id="result"><div class="card" id="sharecard"><div class="eyebrow">關廟天后宮・專屬守護卡</div><div class="symbol">🌸</div><div class="muted">你此刻最需要關注的是</div><h2 id="theme"></h2><div class="deity" id="deity"></div><img id="deity-photo" class="deity-result-photo" width="600" height="800" alt=""><p class="tag" id="specialty"></p><div class="section"><strong>心境解析</strong><p id="insight"></p><strong>給自己的行動建議</strong><p id="advice"></p><strong>一句溫暖提醒</strong><p id="blessing"></p></div></div><div class="section"><strong>你可能也需要留意</strong><p id="second"></p><p class="note">此測驗為自我探索及民俗文化介紹，不是神明指示、醫療診斷或法律及財務專業意見。遇到健康、法律或安全問題，請優先尋求合適的專業協助。</p></div><div class="no-print"><button class="button" onclick="share()">分享測驗連結</button><button class="button secondary" onclick="window.print()">儲存結果卡／列印</button><button class="button secondary" onclick="restart()">重新測驗</button></div></section><footer class="footer">關廟天后宮｜願每一顆心都能找到安定的力量</footer></main><script>
+</section></section><section class="panel hidden" id="quiz"><div id="count" class="muted"></div><div class="progress"><div class="bar" id="bar"></div></div><h2 id="question"></h2><div id="options"></div><button class="button secondary" onclick="back()">返回上一題</button></section><section class="panel hidden" id="result"><div class="card" id="sharecard"><div class="eyebrow">關廟天后宮・專屬守護卡</div><div class="symbol">🌸</div><div class="muted">你此刻最需要關注的是</div><h2 id="theme"></h2><div class="deity" id="deity"></div><img id="deity-photo" class="deity-result-photo" width="600" height="800" alt=""><p class="tag" id="specialty"></p><div class="section"><strong>心境解析</strong><p id="insight"></p><strong>給自己的行動建議</strong><p id="advice"></p><strong>一句溫暖提醒</strong><p id="blessing"></p></div></div><div class="section"><strong>你可能也需要留意</strong><p id="second"></p><p class="note">此測驗為自我探索及民俗文化介紹，不是神明指示、醫療診斷或法律及財務專業意見。遇到健康、法律或安全問題，請優先尋求合適的專業協助。</p></div><div class="no-print"><button class="button" onclick="share()">分享測驗連結</button><button class="button secondary" id="save-card" onclick="openResultCard()">儲存結果卡／列印</button><button class="button secondary" onclick="restart()">重新測驗</button></div></section><footer class="footer">關廟天后宮｜願每一顆心都能找到安定的力量</footer></main><script>
 const qs=[['最近讓你最放不下的是什麼？',[['身體疲倦，或擔心家人健康','health'],['家庭、感情或親密關係','love'],['工作、事業與經濟壓力','work'],['受到委屈，或有法律土地爭議','justice'],['人際關係不順，常被誤解','social'],['家宅不安、環境或風水問題','home'],['遭遇惡意刁難或不公平對待','protect'],['事情太多，不知道從何處開始','overall']]],['當壓力出現時，你最常有什麼感受？',[['疲憊、身體緊繃，休息也不夠','health'],['孤單，想被理解或陪伴','love'],['焦慮前途，擔心付出沒有成果','work'],['不甘心，想把事情說清楚','justice'],['怕得罪別人，總是委屈自己','social'],['擔心家人或居住環境出狀況','home'],['感覺有人阻撓，難以安心','protect'],['各方面都卡住，感到無力','overall']]],['如果明天能改善一件事，你最希望？',[['自己與家人都健康平安','health'],['家庭和睦、感情有好轉','love'],['工作順利、財務穩定','work'],['糾紛得到妥善解決','justice'],['溝通順暢、人緣改善','social'],['住家與土地事務安定','home'],['不再被欺負或惡意干擾','protect'],['混亂的生活重回正軌','overall']]],['遇到困難時，你通常怎麼做？',[['撐著不說，忽略身體警訊','health'],['一再退讓，想維持感情','love'],['努力扛起責任，不敢停下','work'],['蒐集資料，想爭取應有權益','justice'],['一直解釋，盼望大家理解','social'],['反覆思考家庭或環境的問題','home'],['提高警覺，避免再受傷害','protect'],['先處理別人的事，自己卻沒方向','overall']]],['此刻最想對媽祖說哪句話？',[['願我和家人身心安康','health'],['願有良緣，家庭溫暖','love'],['願工作事業有方向','work'],['願是非爭議公平圓滿','justice'],['願遇善緣，與人和順','social'],['願家宅土地安穩','home'],['願遠離惡意，獲得保護','protect'],['願我有力量整理人生的難題','overall']]]];
 const profiles={health:['健康與身心照顧','天三聖母（主公）','身體健康・安定身心','你可能長期照顧他人，卻把自己的疲倦放到最後。','今天先留一段休息時間；若不適持續，安排專業評估。','你也值得被好好照顧。'],love:['家庭與感情連結','朴子二媽','姻緣・家庭','你渴望被理解，可能正為重要關係承受壓力。','找一個適合的時間，溫和說出你的需求，並尊重彼此界線。','真心值得被溫柔回應。'],work:['工作與未來方向','五媽北港媽','生意・事業・工作運','你正為責任與未來努力，可能已經累積不少壓力。','列出最重要的一項工作目標，分成這週能完成的小步驟。','一步一步走，也能走出自己的路。'],justice:['爭議與公平','港口四媽','法律・土地・爭議','你可能正為權益、爭議或不公平的遭遇煩心。','先整理事實、保留紀錄，必要時諮詢法律或相關專業人士。','守住原則，也照顧自己的心。'],social:['人際與溝通','港口六媽','人緣・公關','你在意與人的相處，可能常因誤解而消耗心力。','選一段重要關係練習清楚表達，也允許自己說不。','好的緣分，從善待自己開始。'],home:['家宅與環境安定','鎮殿大媽朴子媽','風水・地理','你在意家人與生活環境的安穩，可能有一些懸而未決的家宅事務。','先檢視實際居住安全、土地文件與家庭溝通，再依信仰習慣祈求平安。','讓家成為安心休息的地方。'],protect:['面對衝突與阻礙','港口正三媽','民俗信仰中的降妖伏魔・護佑','你可能覺得受到阻礙或不被公平對待，需要重新建立安全感。','區分已確認的事實與擔憂；遇到騷擾或威脅，保留證據並尋求適當協助。','願你有勇氣，也有安穩的依靠。'],overall:['多重壓力與生活方向','太平媽','統攬大局・護太平','你可能同時承擔許多問題，一時難以找到優先順序。','把煩惱寫下來，先處理最急迫且能控制的一件事。','不必一次解決所有事情。']};
 const portraits = {
@@ -36,4 +69,168 @@ for (const [id, path] of Object.entries(portraits)) {
   $('deity-cards').append(card);
 }
 let answers=[],step=0;function show(id){['intro','quiz','result'].forEach(x=>$(x).classList.toggle('hidden',x!==id))}function start(){answers=[];step=0;render()}function render(){show('quiz');$('count').textContent=`第 ${step+1} 題／共 5 題`;$('bar').style.width=`${step/5*100}%`;$('question').textContent=qs[step][0];$('options').innerHTML='';qs[step][1].forEach(([t,k])=>{const b=document.createElement('button');b.className='option';b.textContent=t;b.onclick=()=>{answers[step]=k;step++;if(step===5)finish();else render()};$('options').appendChild(b)})}function back(){if(step===0){show('intro');return}step--;answers=answers.slice(0,step);render()}function finish(){const counts={};answers.forEach(k=>counts[k]=(counts[k]||0)+1);const order=Object.keys(profiles).sort((a,b)=>(counts[b]||0)-(counts[a]||0));const first=order[0],second=order[1],p=profiles[first];['theme','deity','specialty','insight','advice','blessing'].forEach((id,i)=>$(id).textContent=p[i]);const photo=$('deity-photo');photo.src=portraits[first];photo.alt=p[1]+'神像照片';$('second').textContent=counts[second]?`另一個值得留意的面向是「${profiles[second][0]}」，可認識${profiles[second][1]}的守護方向。`:'你的答案相當集中，可以先從主要困擾著手。';show('result');window.scrollTo(0,0)}function restart(){answers=[];step=0;show('intro');window.scrollTo(0,0)}async function share(){const data={title:'媽祖知我心｜關廟天后宮',text:'五題探索你的心境，看看哪尊媽祖的守護方向最貼近你。',url:location.href};if(navigator.share){try{await navigator.share(data)}catch(e){}}else if(navigator.clipboard){await navigator.clipboard.writeText(data.url);alert('遊戲連結已複製！')}else alert('請複製網址分享給朋友')}
+</script><script>
+// A single A4 page embeds the rendered card, preserving Chinese text and photos.
+window.createMazuCardPdf = (jpeg, width, height) => {
+  const encode = text => new TextEncoder().encode(text);
+  const chunks = [], offsets = [0];
+  let length = 0;
+  const append = bytes => { chunks.push(bytes); length += bytes.length; };
+  const text = value => append(encode(value));
+  const object = (id, body, stream) => {
+    offsets[id] = length;
+    text(`${id} 0 obj\n${body}`);
+    if (stream) { text('\nstream\n'); append(stream); text('\nendstream'); }
+    text('\nendobj\n');
+  };
+  const pageWidth = 595.28, pageHeight = 841.89, margin = 24;
+  const scale = Math.min((pageWidth - margin * 2) / width, (pageHeight - margin * 2) / height);
+  const w = width * scale, h = height * scale;
+  text('%PDF-1.4\n');
+  object(1, '<< /Type /Catalog /Pages 2 0 R >>');
+  object(2, '<< /Type /Pages /Kids [3 0 R] /Count 1 >>');
+  object(3, `<< /Type /Page /Parent 2 0 R /MediaBox [0 0 ${pageWidth} ${pageHeight}] /Resources << /XObject << /Card 4 0 R >> >> /Contents 5 0 R >>`);
+  object(4, `<< /Type /XObject /Subtype /Image /Width ${width} /Height ${height} /ColorSpace /DeviceRGB /BitsPerComponent 8 /Filter /DCTDecode /Length ${jpeg.length} >>`, jpeg);
+  const commands = encode(`q\n${w.toFixed(3)} 0 0 ${h.toFixed(3)} ${((pageWidth - w) / 2).toFixed(3)} ${((pageHeight - h) / 2).toFixed(3)} cm\n/Card Do\nQ`);
+  object(5, `<< /Length ${commands.length} >>`, commands);
+  const xref = length;
+  text('xref\n0 6\n0000000000 65535 f \n');
+  for (let id = 1; id <= 5; id++) text(`${String(offsets[id]).padStart(10, '0')} 00000 n \n`);
+  text(`trailer\n<< /Size 6 /Root 1 0 R >>\nstartxref\n${xref}\n%%EOF\n`);
+  return new Blob(chunks, { type: 'application/pdf' });
+};
+
+// Render locally so saving also works where the browser has no print service.
+(() => {
+  const dialog = document.createElement('dialog');
+  dialog.className = 'result-card-dialog';
+  dialog.setAttribute('aria-labelledby', 'card-preview-title');
+  dialog.innerHTML = `<div class="card-preview-controls"><h2 id="card-preview-title" tabindex="-1" autofocus>儲存你的守護小卡</h2>
+    <p>手機可長按下方圖片，選擇「儲存到照片」；也可使用分享功能儲存到檔案。</p>
+    <p class="muted">若 LINE 等內建瀏覽器無法儲存或列印，請改用 Safari 或 Chrome 開啟。</p>
+    <p id="card-status" role="status"></p></div>
+    <img id="card-preview-image" alt="本次測驗的專屬守護卡，包含媽祖照片、心境解析與行動建議">
+    <div class="card-preview-controls">
+    <button type="button" class="button" id="card-share" hidden>分享／儲存圖片</button>
+    <button type="button" class="button secondary" id="card-pdf-share" hidden>分享／儲存 PDF</button>
+    <p class="muted">儲存與列印：點「分享／儲存 PDF」→「儲存到檔案」。儲存後，在「檔案」App 開啟，點「分享」再選「列印」。可先儲存 PDF，稍後連接支援 AirPrint 的印表機列印。</p>
+    <button type="button" class="button secondary" id="card-close">關閉預覽</button></div>`;
+  document.body.append(dialog);
+  const image = dialog.querySelector('#card-preview-image');
+  const status = dialog.querySelector('#card-status');
+  const shareButton = dialog.querySelector('#card-share');
+  let file;
+  dialog.querySelector('#card-close').onclick = () => dialog.close();
+  let pdfFile;
+  const pdfShare = dialog.querySelector('#card-pdf-share');
+  pdfShare.onclick = async () => {
+    try {
+      await navigator.share({ files: [pdfFile], title: '媽祖知我心・列印小卡' });
+    } catch (error) {
+      if (error.name !== 'AbortError') status.textContent = '無法開啟分享選單，請用 Safari 重試。';
+    }
+  };
+  shareButton.onclick = async () => {
+    try {
+      await navigator.share({ files: [file], title: '媽祖知我心・專屬守護卡' });
+      status.textContent = '已開啟分享選單，請選擇儲存或分享方式。';
+    } catch (error) {
+      if (error.name !== 'AbortError') status.textContent = '此瀏覽器無法分享圖片，請長按圖片儲存。';
+    }
+  };
+
+  function layoutCard(context) {
+    const items = [];
+    let y = 68;
+    function text(value, size = 30, bold = false, centered = false) {
+      context.font = `${bold ? '700' : '400'} ${size}px system-ui, sans-serif`;
+      let line = '';
+      const lines = [];
+      for (const char of value) {
+        if (char === '\n' || context.measureText(line + char).width > 620) {
+          lines.push(line); line = char === '\n' ? '' : char;
+        } else line += char;
+      }
+      if (line) lines.push(line);
+      for (const content of lines) {
+        items.push({ content, size, bold, centered, y });
+        y += size * 1.65;
+      }
+      y += 18;
+    }
+    const value = id => document.getElementById(id).textContent;
+    text('關廟天后宮・專屬守護卡', 28, true, true);
+    text('媽祖知我心', 44, true, true);
+    text(value('theme'), 34, true, true);
+    text(value('deity'), 38, true, true);
+    const photoY = y;
+    y += 420;
+    text(value('specialty'), 28, true, true);
+    for (const [label, id] of [['心境解析', 'insight'], ['給自己的行動建議', 'advice'], ['一句溫暖提醒', 'blessing'], ['你可能也需要留意', 'second']]) {
+      text(label, 30, true);
+      text(value(id));
+    }
+    text(document.querySelector('#result .note').textContent, 22);
+    text('願每一顆心都能找到安定的力量', 24, true, true);
+    return { items, photoY, height: Math.ceil(y + 38) };
+  }
+
+  window.openResultCard = async () => {
+    const button = document.getElementById('save-card');
+    button.disabled = true;
+    button.textContent = '正在製作小卡…';
+    try {
+      await document.fonts.ready;
+      const canvas = document.createElement('canvas');
+      const context = canvas.getContext('2d');
+      if (!context) throw new Error('Canvas unavailable');
+      const { items, photoY, height } = layoutCard(context);
+      canvas.width = 760; canvas.height = height;
+      const background = context.createLinearGradient(0, 0, 760, height);
+      background.addColorStop(0, '#fff9e8'); background.addColorStop(1, '#ffe1a8');
+      context.fillStyle = background;
+      context.fillRect(0, 0, 760, height);
+      context.strokeStyle = '#bd8240'; context.lineWidth = 3;
+      context.strokeRect(20, 20, 720, height - 40);
+      context.strokeRect(27, 27, 706, height - 54);
+      let photoMissing = false;
+      try {
+        const photo = new Image();
+        photo.src = document.getElementById('deity-photo').src;
+        await photo.decode();
+        const scale = Math.min(360 / photo.naturalWidth, 390 / photo.naturalHeight);
+        const width = photo.naturalWidth * scale, photoHeight = photo.naturalHeight * scale;
+        context.drawImage(photo, (760 - width) / 2, photoY, width, photoHeight);
+      } catch { photoMissing = true; }
+      context.textBaseline = 'top';
+      for (const item of items) {
+        context.font = `${item.bold ? '700' : '400'} ${item.size}px system-ui, sans-serif`;
+        context.fillStyle = item.bold ? '#962d40' : '#512d2d';
+        context.textAlign = item.centered ? 'center' : 'left';
+        context.fillText(item.content, item.centered ? 380 : 70, item.y);
+      }
+      const jpeg = await new Promise(resolve => canvas.toBlob(resolve, 'image/jpeg', 0.95));
+      if (!jpeg) throw new Error('JPEG encoding failed');
+      const pdf = window.createMazuCardPdf(new Uint8Array(await jpeg.arrayBuffer()), canvas.width, canvas.height);
+      pdfFile = new File([pdf], '媽祖知我心-守護小卡.pdf', { type: 'application/pdf' });
+      pdfShare.hidden = !navigator.canShare?.({ files: [pdfFile] });
+      const dataUrl = canvas.toDataURL('image/png');
+      image.src = dataUrl;
+      await image.decode();
+      const blob = await new Promise(resolve => canvas.toBlob(resolve, 'image/png'));
+      file = blob ? new File([blob], '媽祖知我心-守護小卡.png', { type: 'image/png' }) : null;
+      shareButton.hidden = !(file && navigator.canShare?.({ files: [file] }));
+      status.textContent = photoMissing ? '神像照片暫時無法載入，已製作文字小卡。可關閉後重試以加入照片。' : '小卡已完成，可長按圖片儲存，或使用分享／儲存功能。';
+      dialog.showModal();
+      dialog.querySelector('#card-preview-title').focus({ preventScroll: true });
+      dialog.scrollTop = 0;
+    } catch {
+      alert('暫時無法製作小卡，請重新開啟頁面後再試，或先截圖保留結果。');
+    } finally {
+      button.disabled = false;
+      button.textContent = '儲存結果卡／列印';
+    }
+  };
+})();
+
 </script></body></html>
